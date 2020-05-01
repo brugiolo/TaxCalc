@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
-namespace TaxCalc.Api.ViewModels
+namespace TaxCalc.Business.Models
 {
-    public class InfoViewModel
+    public class Info
     {
         public string TaxTraderSource { get; set; }
         public string TaxCalcSource { get; set; }

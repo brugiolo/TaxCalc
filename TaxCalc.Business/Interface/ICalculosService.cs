@@ -1,9 +1,10 @@
 ﻿using System.Threading.Tasks;
+using TaxCalc.Business.Models;
 
 namespace TaxCalc.Business.Interface
 {
     public interface ICalculosService
     {
-        public Task<decimal> CalcularJuros(decimal valor, int tempoEmMeses);
+        public Task<Calculo> CalcularResultado(decimal valor, int tempoEmMeses);
     }
 }

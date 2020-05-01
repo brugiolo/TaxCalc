@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
-namespace TaxCalc.Api.ViewModels
+namespace TaxCalc.Business.Models
 {
-    public class CalculoViewModel
+    public class Calculo
     {
         public decimal ValorInicial { get; set; }
         public int Tempo { get; set; }
