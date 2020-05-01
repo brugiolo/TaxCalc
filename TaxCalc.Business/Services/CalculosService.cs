@@ -27,7 +27,7 @@ namespace TaxCalc.Business.Services
             };
         }
 
-        public async Task<decimal> ObterTaxaJuros()
+        private async Task<decimal> ObterTaxaJuros()
         {
             var httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(BaseUriTaxaJuros);
