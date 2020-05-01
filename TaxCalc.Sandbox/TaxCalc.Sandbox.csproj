@@ -5,4 +5,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TaxCalc.Api\TaxCalc.Api.csproj" />
+    <ProjectReference Include="..\TaxCalc.Business\TaxCalc.Business.csproj" />
+  </ItemGroup>
+
 </Project>

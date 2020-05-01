@@ -10,6 +10,7 @@ namespace TaxCalc.Api.Configuration
         public static IServiceCollection ResolverDependencias(this IServiceCollection services)
         {
             services.AddScoped<ICalculosService, CalculosService>();
+            services.AddScoped<IInfoService, InfoService>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 

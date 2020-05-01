@@ -1,16 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using TaxCalc.Api.Configuration;
 
 namespace TaxCalc.Api
@@ -22,6 +15,8 @@ namespace TaxCalc.Api
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
+            var baseUri = Configuration.GetValue<string>("MySettings:DbConnection");
         }
 
         public void ConfigureServices(IServiceCollection services)

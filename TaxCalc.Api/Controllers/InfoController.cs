@@ -7,7 +7,6 @@ using TaxCalc.Business.Interface;
 namespace TaxCalc.Api.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
     public class InfoController : ControllerBase
     {
         private readonly IInfoService _infoService;
@@ -19,7 +18,7 @@ namespace TaxCalc.Api.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet("showmethecode")]
+        [HttpGet("ShowMeTheCode")]
         public async Task<ActionResult<InfoViewModel>> ShowMeTheCode()
         {
             var info = await _infoService.ObterInfo();

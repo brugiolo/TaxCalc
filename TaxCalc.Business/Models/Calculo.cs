@@ -8,6 +8,6 @@ namespace TaxCalc.Business.Models
     {
         public decimal ValorInicial { get; set; }
         public int Tempo { get; set; }
-        public decimal Resultado { get; set; }
+        public double Resultado { get; set; }
     }
 }

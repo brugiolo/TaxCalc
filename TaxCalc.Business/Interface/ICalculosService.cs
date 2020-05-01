@@ -5,6 +5,6 @@ namespace TaxCalc.Business.Interface
 {
     public interface ICalculosService
     {
-        public Task<Calculo> CalcularResultado(decimal valor, int tempoEmMeses);
+        public Task<Calculo> CalcularResultado(decimal valorInicial, int tempo);
     }
 }
