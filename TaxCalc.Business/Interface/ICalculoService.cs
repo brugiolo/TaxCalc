@@ -3,7 +3,7 @@ using TaxCalc.Business.Models;
 
 namespace TaxCalc.Business.Interface
 {
-    public interface ICalculosService
+    public interface ICalculoService
     {
         public Task<Calculo> CalcularResultado(decimal valorInicial, int tempo);
     }

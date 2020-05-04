@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxCalc.Api", "TaxCalc.Api\TaxCalc.Api.csproj", "{0FE1B732-4D2C-47F2-A223-6A8CBDDA5E73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxCalc.Api", "TaxCalc.Api\TaxCalc.Api.csproj", "{0FE1B732-4D2C-47F2-A223-6A8CBDDA5E73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxCalc.Business", "TaxCalc.Business\TaxCalc.Business.csproj", "{C6AD7CA4-B0C6-41DF-9103-5E34A0EBBBAA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxCalc.Business", "TaxCalc.Business\TaxCalc.Business.csproj", "{C6AD7CA4-B0C6-41DF-9103-5E34A0EBBBAA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxCalc.Sandbox", "TaxCalc.Sandbox\TaxCalc.Sandbox.csproj", "{85749525-43CC-49C1-BF45-367CA1227F71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxCalc.Sandbox", "TaxCalc.Sandbox\TaxCalc.Sandbox.csproj", "{85749525-43CC-49C1-BF45-367CA1227F71}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxCalc.Test", "TaxCalc.Test\TaxCalc.Test.csproj", "{D23109BC-330B-4F88-9F95-39E7E48C2B3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxCalc.IntegrationTests", "TaxCalc.IntegrationTests\TaxCalc.IntegrationTests.csproj", "{26326316-7090-44F8-8C01-AAA94D0A512C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{85749525-43CC-49C1-BF45-367CA1227F71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85749525-43CC-49C1-BF45-367CA1227F71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{85749525-43CC-49C1-BF45-367CA1227F71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D23109BC-330B-4F88-9F95-39E7E48C2B3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D23109BC-330B-4F88-9F95-39E7E48C2B3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D23109BC-330B-4F88-9F95-39E7E48C2B3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D23109BC-330B-4F88-9F95-39E7E48C2B3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26326316-7090-44F8-8C01-AAA94D0A512C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26326316-7090-44F8-8C01-AAA94D0A512C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26326316-7090-44F8-8C01-AAA94D0A512C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26326316-7090-44F8-8C01-AAA94D0A512C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

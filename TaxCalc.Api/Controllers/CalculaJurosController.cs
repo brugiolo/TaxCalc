@@ -10,10 +10,10 @@ namespace TaxCalc.Api.Controllers
     [ApiController]
     public class CalculaJurosController : ControllerBase
     {
-        private readonly ICalculosService _calculosService;
+        private readonly ICalculoService _calculosService;
         private readonly IMapper _mapper;
 
-        public CalculaJurosController(ICalculosService calculosService, IMapper mapper) : base()
+        public CalculaJurosController(ICalculoService calculosService, IMapper mapper) : base()
         {
             _calculosService = calculosService;
             _mapper = mapper;
@@ -26,7 +26,7 @@ namespace TaxCalc.Api.Controllers
             {
                 var calculo = await _calculosService.CalcularResultado(valorInicial, tempo);
                 var calculoViewModel = _mapper.Map<CalculoViewModel>(calculo);
-                
+
                 return Ok(calculoViewModel);
             }
             catch(Exception ex)

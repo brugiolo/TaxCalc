@@ -1,23 +1,38 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using MediatR;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using TaxCalc.Business.Events;
 using TaxCalc.Business.Interface;
 using TaxCalc.Business.Models;
 
 namespace TaxCalc.Business.Services
 {
-    public class CalculosService : ICalculosService
+    public class CalculoService : ICalculoService
     {
         static string BaseUriTaxaJuros = "https://localhost:44311/";
+        private readonly IMediator _mediator;
+
+        public CalculoService(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
 
         public async Task<Calculo> CalcularResultado(decimal valorInicial, int tempo)
         {
+            if (valorInicial <= 0)
+                throw new Exception("O valor inicial deve maior do que 0 (zero).");
+            if (tempo <= 0)
+                throw new Exception("O tempo deve ser maior do que 0 (zero).");
+
             var valorJuros = await ObterTaxaJuros();
             var basePotencia = valorInicial * (1 + valorJuros);
             var resultadoPotencia = Math.Pow(Convert.ToDouble(basePotencia), tempo);
             var resultado = Math.Truncate(100 * resultadoPotencia) / 100;
+
+            await _mediator.Publish(new NotificacaoTeste("CalculoService - Calculo realizado com sucesso."));
 
             return new Calculo 
             {  
