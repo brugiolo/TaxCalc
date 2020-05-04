@@ -1,6 +1,7 @@
 ﻿using Moq;
 using System.Threading;
 using System.Threading.Tasks;
+using TaxCalc.Business.Events;
 using Xunit;
 
 namespace TaxCalc.Test.Calculo
@@ -15,16 +16,15 @@ namespace TaxCalc.Test.Calculo
             Fixture = fixture;
         }
 
-        //[Fact(DisplayName = "Realizar Calculo com sucesso")]
-        //[Trait("Categoria", "Calculo Service Tests")]
-        //public async Task CalculoService_RealizarCalculo_Sucesso()
-        //{
-        //    var calculoService = Fixture.GetCalculoService();
+        [Fact(DisplayName = "Realizar Calculo com sucesso")]
+        [Trait("Categoria", "Calculo Service Tests")]
+        public async Task CalculoService_RealizarCalculo_Sucesso()
+        {
+            var calculoService = Fixture.GetCalculoService();
 
-        //    await calculoService.CalcularResultado(1, 2);
+            await calculoService.CalcularResultado(1, 2);
 
-        //    Fixture.CalculoServiceMock.Verify(r => r.CalcularResultado(1, 2), Times.Once);
-        //    Fixture.MediatorMock.Verify(m => m.Publish(It.IsAny<string>(), CancellationToken.None), Times.Once);
-        //}
+            Fixture.MediatorMock.Verify(m => m.Publish(It.IsAny<NotificacaoTeste>(), CancellationToken.None), Times.Once);
+        }
     }
 }

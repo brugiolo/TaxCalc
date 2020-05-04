@@ -21,7 +21,7 @@ namespace TaxCalc.IntegrationTests.API
             _httpClient = server.CreateClient();
         }
 
-        [Theory]
+        [Theory(DisplayName = "Efetua Saque via api")]
         [InlineData("GET", 2, 3)]
         public async Task ExecutarCalculoJurosSucesso(string httpMethod, decimal valorInicial, int tempo)
         {
