@@ -22,7 +22,7 @@ namespace TaxCalc.IntegrationTests.API
 
         [Theory]
         [InlineData("GET")]
-        public async Task ObterShowMeTheCode(string httpMethod)
+        public async Task ExecutarShowMeTheCode(string httpMethod)
         {
             var requisicao = new HttpRequestMessage(new HttpMethod(httpMethod), "/ShowMeTheCode");
             var resposta = await _httpClient.SendAsync(requisicao);

@@ -23,7 +23,7 @@ namespace TaxCalc.IntegrationTests.API
 
         [Theory]
         [InlineData("GET", 2, 3)]
-        public async Task ObterCalculoJuros(string httpMethod, decimal valorInicial, int tempo)
+        public async Task ExecutarCalculoJurosSucesso(string httpMethod, decimal valorInicial, int tempo)
         {
             var requisicao = new HttpRequestMessage(
                 new HttpMethod(httpMethod), string.Format("/CalculaJuros?valorInicial={0}&tempo={1}", valorInicial, tempo));
@@ -32,6 +32,18 @@ namespace TaxCalc.IntegrationTests.API
 
             resposta.EnsureSuccessStatusCode();
             Assert.Equal(HttpStatusCode.OK, resposta.StatusCode);
+        }
+
+        [Theory]
+        [InlineData("GET", 2, -3)]
+        public async Task ExecutarCalculoJurosFalha(string httpMethod, decimal valorInicial, int tempo)
+        {
+            var requisicao = new HttpRequestMessage(
+                new HttpMethod(httpMethod), string.Format("/CalculaJuros?valorInicial={0}&tempo={1}", valorInicial, tempo));
+
+            var resposta = await _httpClient.SendAsync(requisicao);
+
+            Assert.Equal(HttpStatusCode.BadRequest, resposta.StatusCode);
         }
     }
 }
